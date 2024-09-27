@@ -656,10 +656,14 @@ Resources:
       Tags:
         - Key: Name
           Value: !Sub "${AWS::AccountId}-${CompanyName}-${Environment}-logs"
+          
+          
 
    ########################
    ### Clean S3 Buckets ### 
    ########################
+      PublicAccessBlockConfiguration:
+        IgnorePublicAcls: True
   CleanupRole:
     Type: AWS::IAM::Role
     Properties:
